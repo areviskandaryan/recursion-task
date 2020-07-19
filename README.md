@@ -1,6 +1,6 @@
 # recursion-task
 
-## This repository contains of following fayls
+## This repository contains of following files
 * concatArrays.js
 * findAllOddDigits.js
 * findIndexViolated.js
