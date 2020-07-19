@@ -4,7 +4,7 @@ const removeFirstElem = (arr) => {
             return [];
         }
 
-        const [first, ...rest] = arr;
+        const [first, ...rest] = acc;
 
         if (acc.length === arr.length) {
             return arr;

@@ -1,3 +1,12 @@
+
+/**
+ * @description get Array from list values
+ * @param {Object} list -list of objects
+ * @return {Object []}- Array which contains list values
+ */
+
+
+
 let list = {
     value: 1,
     next: {
@@ -6,16 +15,19 @@ let list = {
             value: 3,
             next: {
                 value: 4,
-                next: null,
-            },
-        },
-    },
+                next: null
+            }
+        }
+    }
 };
 
 function printList(list) {
-    console.log(list.value);
-    if (list.next !== null) {
-        return printList(list.next);
+    function iter(list,acc){
+        if(list.next){
+            return iter(list.next,[...acc, list.value])
+        }
+        return [...acc,list.value];
     }
+    return iter(list,[])
 }
-console.log(printList(list));
+console.log(printList(list))

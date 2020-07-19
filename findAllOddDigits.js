@@ -1,12 +1,21 @@
-function findAllOddDigits(num) {
-    let digit = num % 10;
+/**
+ * @description check whether all digits are odd or not
+ * @param {number}
+ * @return {boolean} - true or false
+ */
 
-    if (digit % 2 == 0) {
-        return "not odd";
+const findAllOddDigits = (number) => {
+    let lDigit = number % 10;
+
+    if (lDigit % 2 === 0) {
+        return false;
     }
 
-    if (num == 0) return "odd";
+    if (number - lDigit === 0) {
+        return true;
+    }
 
-    return findAllOddDigits(parseInt(num / 10));
-}
-console.log(findAllOddDigits(0));
+    return findAllOddDigits((number - lDigit) / 10);
+};
+
+console.log(findAllOddDigits(771133));
